@@ -1,0 +1,84 @@
+/* seteo general */
+body {
+  /* background: #fff; */
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+}
+/* body */
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #3f3fb1;
+}
+.Titulo {
+  color: #5f49d0;
+  font-size: 25px;
+  border: solid 1px white;
+  background-color: white;
+  border-radius: 10px;
+  text-align: center;
+  height: 60px;
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+.cliente {
+  color: #5f49d0;
+  border: solid 1px white;
+  border-radius: 10px;
+  top: 35px;
+  height: 60px;
+  width: 95%;
+  margin: 0 auto;
+
+}
+.encabezado {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: #5f49d0;
+  border: solid 1px white;
+  background-color: white;
+  margin-bottom: 25px;
+}
+.tabla_encabenzado {
+  background-color: #5f49d0;
+  margin-top: 35px;
+  color: #f4f4fa;
+}
+
+#createModal {
+  width: 100%;
+}
+.modal-dialog {
+  width: 90%;
+  max-width: 180px;
+}
+.btnatras button{
+  background-color: #5f49d0;
+  color: #f4f4fa;
+  border: solid 1px white;
+  border-radius: 10px;
+  height: 30px;
+  width: 15%;
+  margin: 0 auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+.modal-body{
+  background-color: #f4f4fa;  
+}
+.cliente .iconoBuscar{
+  position: absolute;
+  left: 280px;
+  background-color:  #afcee7;
+  border-radius: 1px;
+  height: 25px;
+  width: 20px;
+}
+.buscador{
+  display: flex;
+  align-items: center;
+}

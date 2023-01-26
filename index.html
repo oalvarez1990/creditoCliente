@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <!-- importar iconos -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <!-- importar bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <title>Sistema de credito</title>
+</head>
+
+<body>
+    <!-- titulo -->
+    <div class="Titulo">
+        <p>Clientes</p>
+    </div>
+    <!-- formulario de clientes -->
+    <section class="cliente">
+        <!-- encabezado cliente -->
+        <div class="encabezado">
+            <div class="form-group has-feedback buscador">
+                <input type="text" class="form-control" name="buscar" id="btnBuscar" placeholder="Nombre, NIT o CC">
+                <span class="form-control-feedback bi bi-search iconoBuscar"></span>
+            </div>
+
+            <!-- button cliente -->
+            <div class="boton">
+                <button type="button" class="btn btn-primary btncrear" data-bs-toggle="modal"
+                    data-bs-target="#createModal" id="btncrear">
+                    Crear cliente
+                </button>
+            </div>
+        </div>
+        <!-- tabla de clientes -->
+        <div class="tabla">
+            <table class="table table-striped">
+                <thead>
+                    <tr class="tabla_encabenzado">
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellidos</th>
+                        <th scope="col">NIT/CC</th>
+                        <th scope="col">Direccion</th>
+                        <th scope="col">Ciudad</th>
+                        <th scope="col">Telefono</th>
+                        <th scope="col">Cupo Disponible</th>
+                        <th scope="col">Estado</th>
+                        <th scope="col">Acciones</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+
+
+                    </tr>
+                </thead>
+                <tbody class="" id="Tclientes">
+
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Se Modal para registrar cliente nuevo -->
+    <div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="createModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!-- titulo -->
+                    <div class="Titulo">
+                        <p>Nuevo Cliente</p>
+                    </div>
+                </div>
+                <!-- boton atras -->
+                <div class="btnatras">
+                    <button data-bs-dismiss="modal" >Atras</button>
+                </div>
+                <div class="subtitulo">
+                    <h3>Datos personales</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <div class="col-sm-4">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="apellidos">Apellidos</label>
+                            <input type="text" class="form-control" id="apellido" placeholder="Apellidos">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="nitcc">NIT/CC</label>
+                            <input type="text" class="form-control" id="nitcc" placeholder="NIT/CC">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-4">
+                            <label for="ciudad">Ciudad</label>
+                            <select class="form-control" id="ciudad" required>
+                                <option value="ciudad">Seleccionar</option>
+                                <option value="ciudad">Bucaramanga</option>
+                                <option value="ciudad">Bogota</option>
+                                <option value="ciudad">San Gil</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="direccion">Direccion</label>
+                            <input type="text" class="form-control" id="direccion" placeholder="Direccion">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="contacto">Contacto</label>
+                            <input type="text" class="form-control" id="contacto" placeholder="Contacto">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-4">
+                            <label for="telefono">Telefono</label>
+                            <input type="text" class="form-control" id="telefono" placeholder="Telefono">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="cupo">Cupo Total</label>
+                            <input type="text" class="form-control" id="cupoTotal" placeholder="Cupo total">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="CupoDisponible">Cupo Disponible</label>
+                            <input type="text" class="form-control" id="CupoDisponible" placeholder="Cupo Disponible">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-4">
+                            <label for="DiasGracias">Dias de gracia</label>
+                            <input type="text" class="form-control" id="DiasGracias" placeholder="Dias de gracia">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="guardar" data-bs-dismiss="modal">Guardar cambios</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- importacion cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <!-- importar el javascript -->
+
+
+    <script src="script/script.js"></script>
+</body>
+
+
+</html>
